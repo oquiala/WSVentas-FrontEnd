@@ -1,0 +1,24 @@
+
+
+.card {
+  width: 300px;
+}
+
+.centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.avatar {
+  width: 60px;
+  transform: translate(50%);
+}

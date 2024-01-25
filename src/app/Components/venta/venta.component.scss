@@ -1,0 +1,43 @@
+
+.card-user {
+  width: 95%;
+  .icon {
+    color: #5aa7ff;
+  }
+}
+
+.card-venta {
+  width: 95%;
+  .icon {
+    color: #ff5b91;
+  }
+}
+
+.card-prod {
+  width: 95%;
+  .icon {
+    color: #95C262;
+  }
+}
+
+.icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+mat-divider {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.titulo {
+  display: flex;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+

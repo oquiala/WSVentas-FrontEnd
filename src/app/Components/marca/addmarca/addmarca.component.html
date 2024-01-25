@@ -1,0 +1,31 @@
+
+<h1 mat-dialog-title class="centrar">{{ marca != null? 'Editar' : 'Adicionar'}} Marca</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="saveMarca()">
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <input matInput type="text" formControlName = "descripcion">
+        <mat-icon matSuffix color="accent">description</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Activo</mat-label>
+        <input matInput type="text" formControlName = "activo">
+        <mat-icon matSuffix color="accent">check_circle</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="centrar">
+      <button mat-raised-button color="warn" type="reset" (click)="close()"> <mat-icon>close</mat-icon> Cancelar</button>
+      <button mat-raised-button color="primary" type="submit" class="guardar" [disabled]="form.invalid">
+        <mat-icon>done</mat-icon> Guardar
+      </button>
+    </div>
+
+  </form>
+</div>
+

@@ -1,0 +1,75 @@
+<h1 mat-dialog-title>Nueva Venta</h1>
+<div mat-dialog-content>
+  <div class="form-venta">
+    <mat-form-field class="half-width">
+      <mat-label>Usuario</mat-label>
+      <input matInput type="text" [(ngModel)]="venta.idUsuario">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <mat-label>Contacto</mat-label>
+      <input matInput type="text" [(ngModel)]="venta.contacto">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <mat-label>Teléfono</mat-label>
+      <input matInput type="text" [(ngModel)]="venta.telefono">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <mat-label>Dirección</mat-label>
+      <input matInput type="text" [(ngModel)]="venta.direccion">
+    </mat-form-field>
+
+    <mat-form-field class="half-width">
+      <mat-label>Distrito</mat-label>
+      <input matInput type="text" [(ngModel)]="venta.idDistrito">
+    </mat-form-field>
+  </div>
+
+  <h5>Detalles de la Venta</h5>
+  <form [formGroup]="detallesForm" (ngSubmit)="addDetalle()" class="form-Detalle">
+
+      <mat-form-field class="half-width">
+        <mat-label>Producto</mat-label>
+        <input matInput type="text" formControlName="idProducto">
+      </mat-form-field>
+
+      <mat-form-field class="half-width">
+        <mat-label>Cantidad</mat-label>
+        <input matInput type="text" formControlName="cantidad">
+      </mat-form-field>
+
+      <mat-form-field class="half-width">
+        <mat-label>Total</mat-label>
+        <input matInput type="text" formControlName="total">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="half-width" type="submit" [disabled]="detallesForm.invalid">
+        <mat-icon>add</mat-icon> Agregar
+      </button>
+
+      <div class="tabla-detalle">
+        <table style="width: 100%;">
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+          <tr *ngFor="let item of detalles">
+            <td>{{item.idProducto}}</td>
+            <td>{{item.cantidad}}</td>
+            <td>{{item.total}}</td>
+          </tr>
+        </table>
+      </div>
+
+  </form>
+</div>
+
+<div mat-dialog-actions class="centrar">
+  <button mat-raised-button color="warn" (click)="close()"> <mat-icon>close</mat-icon> Cancelar</button>
+  <button mat-raised-button color="primary" (click)="addVenta()" >
+    <mat-icon>done</mat-icon> Aceptar
+  </button>
+</div>
